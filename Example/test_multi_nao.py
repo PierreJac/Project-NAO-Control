@@ -4,7 +4,8 @@ Created on Mon Jul  6 14:00:59 2015
 
 @author: Pierre Jacquot
 """
-#This code give five different orders to five NAOs located at five different ports.
+#This code give three different orders to three NAOs located at three different ports.
+#You may want to change the IP's adresses and the ports as well (or even the number of NAO)
 from naoqi import ALProxy
 from threading import Thread
 
@@ -42,8 +43,7 @@ def main(robotIP,port,postureName,speed=1.0):
         print "Error was: ", e
 
 if __name__== "__main__":
-    Thread(target = main, args= ('127.0.0.1',9559,'Crouch',0.5)).start()
-    Thread(target = main, args= ('127.0.0.1',9558,'Sit',0.5)).start()
-    Thread(target = main, args= ('127.0.0.1',9557,'SitRelax',0.5)).start()
-    Thread(target = main, args= ('127.0.0.1',9556,'LyingBelly',0.5)).start()
-    Thread(target = main, args= ('127.0.0.1',9555,'LyingBack',0.5)).start()
+    Thread(target = main, args= ('172.0.0.1',9559,'Crouch',0.5)).start()
+    Thread(target = main, args= ('172.0.0.1',9558,'Sit',0.5)).start()
+    Thread(target = main, args= ('172.0.0.1',9557,'SitRelax',0.5)).start()
+

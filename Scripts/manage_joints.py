@@ -178,7 +178,7 @@ def get_new_nao_handles(nbrOfNao,clientID,Body):
         Body[26].append(vrep.simxGetObjectHandle(clientID,'NAO_RRFinger_Base#'+str(i),vrep.simx_opmode_oneshot_wait)[1])
         Body[26].append(vrep.simxGetObjectHandle(clientID,'Revolute_joint2#'+str(i),vrep.simx_opmode_oneshot_wait)[1])
         Body[26].append(vrep.simxGetObjectHandle(clientID,'Revolute_joint3#'+str(i),vrep.simx_opmode_oneshot_wait)[1])
-        Body[27].append(Body[26][i*8:(i+1)*8])  
+        Body[27].append(Body[26][(i+1)*8:(i+2)*8])  
 #Allow the joint to move in the VRep Simulation
 def JointControl(clientID,motionProxy,i,Body):
     #Head

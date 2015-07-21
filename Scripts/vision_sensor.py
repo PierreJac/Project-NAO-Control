@@ -42,12 +42,27 @@ def streamVisionSensor(visionSensorName,clientID,pause=0.0001):
         plt.pause(pause)
     print 'End of Simulation'
     
+def getVisionSensor(visionSensorName,clientID):
+    #Get the handle of the vision sensor
+    res1,visionSensorHandle=vrep.simxGetObjectHandle(clientID,visionSensorName,vrep.simx_opmode_oneshot_wait)
+    #Get the image
+    res2,resolution,image=vrep.simxGetVisionSensorImage(clientID,visionSensorHandle,0,vrep.simx_opmode_streaming)
+    time.sleep(1)
+    while (vrep.simxGetConnectionId(clientID)!=-1): 
+        #Get the image of the vision sensor
+        res,resolution,image=vrep.simxGetVisionSensorImage(clientID,visionSensorHandle,0,vrep.simx_opmode_buffer)
+        print resolution
+    print 'End of Simulation'
+    
 if __name__ == '__main__':
     vrep.simxFinish(-1)
     clientID=vrep.simxStart('127.0.0.2',19999,True,True,5000,5)
     if clientID!=-1:
         print 'Connected to remote API server'
+        #Get and display the pictures from the camera
         streamVisionSensor('NAO_vision1',clientID,0.0001)
+        #Only get the image
+        #getVisionSensor('NAO_vision1',clientID)
 
     else:
         print 'Connection non successful'

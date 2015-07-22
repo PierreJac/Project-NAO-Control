@@ -26,21 +26,21 @@ $ ./naoqi-bin -p [Port Number] &
 - You can try to make your NAO move in v-rep using choregraphe or a script you've made
 - Enjoy !
 
-### How to receive image from the virtual NAO in v-rep
-You can retrieve images from the camera of your virtual NAO inv-rep just by using our script vision_sensor.py. This script will stream the camera in a independant display. You can also import the function in another script.
+### How to retrieve the video from NAO's vision sensors in v-rep :
+You can retrieve images from the cameras of your virtual NAO in v-rep just by using our script vision_sensor.py. This script will stream the camera in a independent display. You can also import the function in another script.
 The function getVisionSensor will just retrieve the image and not display it. 
 
 ### How to configure your own v-rep scene :
 If you want to create your very own v-rep scene containing a NAO, you'll need to configure it so the remote API could connect to it. To do so please follow the official v-rep documentation :
 - [Enable remote API client side]
 - [Enable remote API server side]
-- Or if you prefer you can follow this -> [video] <-    
+- Or if you prefer you can follow this -> [video] <- (many thanks to Nikolai K. for his really good tutorial)   
 In order to get the camera and the fingers working you'll also need a few more steps :
-- For the camera 
- - In the properties of the cameras untick "Explicit Handling"
+- For the cameras 
+  - In the properties of the cameras untick "Explicit Handling"
 - For the fingers
- - In eacht joint properties tick Motion Handling of all joints enabled" 
- - In each model properties of each joints groupement check that everything is untick
+  - In each joint properties tick "Motion Handling of all joints enabled" 
+  - In each model properties of each joints groupement check that everything is untick
 Finally, disable the child scripts automatically generated with the NAO.
 
 

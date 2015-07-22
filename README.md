@@ -40,7 +40,8 @@ In order to get the camera and the fingers working you'll also need a few more s
   - In the properties of the cameras untick "Explicit Handling"
 - For the fingers
   - In each joint properties tick "Motion Handling of all joints enabled" 
-  - In each model properties of each joints groupement check that everything is untick
+  - In each model properties of each joints groupement check that everything is untick  
+
 Finally, disable the child scripts automatically generated with the NAO.
 
 
